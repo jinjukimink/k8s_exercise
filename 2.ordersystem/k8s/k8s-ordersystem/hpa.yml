@@ -5,7 +5,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: ordersystem-backend-hpa
-  namespace: bradkim
+  namespace: jinjukim
 spec: 
   scaleTargetRef:
     apiVersion: apps/v1
@@ -19,6 +19,6 @@ spec:
 # kubectl get hpa ordersystem-backend-hpa -n bradkim -w
 
 # 부하 간단 테스트
-# 특정 pod에 접속
+# 특정 pod에 접속 
 # while true; do curl -s http://ordersystem-backend-service/product/list; done
 
