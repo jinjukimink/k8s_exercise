@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kafka
-  namespace: bradkim
+  namespace: jinjukim
 spec:
   replicas: 1
   selector:
@@ -30,13 +30,12 @@ spec:
           value: "INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092"
         - name: KAFKA_INTER_BROKER_LISTENER_NAME
           value: "INSIDE"
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: kafka-service
-  namespace: bradkim
+  namespace: jinjukim
 spec:
   type: ClusterIP
   ports:
